@@ -25,7 +25,6 @@
       "prettier --write ."
     ]
   },
-
   "author": "",
   "license": "ISC",
   "description": ""
