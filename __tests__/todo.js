@@ -4,13 +4,15 @@ const { all, markAsComplete, add, overdue, dueToday, dueLater } = todoList();
 
 describe("Todo List Test Suite", () => {
   beforeAll(() => {
-    const today = new Date();
-    const oneDay = 86400000;
+    const thisday = new Date();
+    const sec_in_day = 86400000;
     [
       {
         title: "Prepare for Exam",
         completed: false,
-        dueDate: new Date(today.getTime() - oneDay).toLocaleDateString("en-CA"),
+        dueDate: new Date(thisday.getTime() - sec_in_day).toLocaleDateString(
+          "en-CA"
+        ),
       },
       {
         title: "Pay rent",
@@ -20,7 +22,9 @@ describe("Todo List Test Suite", () => {
       {
         title: "Submit assignment",
         completed: false,
-        dueDate: new Date(today.getTime() + oneDay).toLocaleDateString("en-CA"),
+        dueDate: new Date(thisday.getTime() + sec_in_day).toLocaleDateString(
+          "en-CA"
+        ),
       },
     ].forEach(add);
   });
